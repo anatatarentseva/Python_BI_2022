@@ -4,11 +4,9 @@ def matrix_multiplication(x, y):
     return np.dot(x, y)
 
 def multiplication_check(matrices):
-    shape = matrices[0].shape
-    for i in range(1, len(matrices)):
-        if shape[1] != matrices[i].shape[0]:
+    for i in range(len(matrices) - 1):
+        if matrices[i].shape[1] != matrices[i + 1].shape[0]:
             return False
-        shape = shape[0], matrices[i].shape[1]
     return True
 
 def multiply_matrices(matrices):
